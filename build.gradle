@@ -1,0 +1,32 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.cognizant.mvp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+	implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+	implementation group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '3.0.2'
+	testImplementation group: 'com.github.tomakehurst', name: 'wiremock-standalone', version: '2.27.2'
+	// added the spring boot starter security but all of my complete app got secured 
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.5.4'
+	// easy library that will allow me to parse and validate and build tokens.......
+	implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+	
+}
+
+test {
+	useJUnitPlatform()
+}
